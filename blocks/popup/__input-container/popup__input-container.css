@@ -1,0 +1,8 @@
+.popup__input-container{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}

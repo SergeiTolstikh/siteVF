@@ -1,0 +1,11 @@
+@import url(./vendor/normalize.css);
+
+@import url(./fonts/fonts.css);
+
+/*popup*/
+@import url(../blocks/popup/popup.css);
+ @import url(../blocks/popup/__form/popup__form.css);
+  @import url(../blocks/popup/__form-title/popup__form-title.css);
+  @import url(../blocks/popup/__input-container/popup__input-container.css);
+   @import url(../blocks/popup/__input/popup__input.css);
+/**/

@@ -1,0 +1,10 @@
+.popup__input{
+    width: 100%;
+    max-width: 230px;
+    border-width: 0px;
+    border-bottom-width: 1px;
+}
+
+.popup__input:last-of-type {
+    margin-top: 15px;
+}
