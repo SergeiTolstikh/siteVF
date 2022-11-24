@@ -1,4 +1,13 @@
 .popup__form-title {
+    color: white;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
     margin: auto;
-
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }

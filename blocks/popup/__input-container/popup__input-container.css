@@ -5,4 +5,8 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
