@@ -1,10 +1,10 @@
 .popup__button-submit{
+    color: #242424;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
-    max-width: 150px;
+    max-width: 220px;
     border-width: 0px;
-    color: #3c3c3c;
     font-family: 'Inter', 'Arial', 'sans-serif';
     font-size: 18px;
     font-style: normal;
@@ -14,4 +14,12 @@
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
+    cursor: pointer;
 }
+
+.popup__button-submit:hover {
+    color: white;
+    background-color: #5c4242;
+    transition: .3s;
+}
+

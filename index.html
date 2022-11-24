@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./style/index.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
 
@@ -19,18 +21,55 @@
     <footer>
 
     </footer>
-
+    <button type="button" class="openpop"></button>
     <div class="popup">
-        
+
         <form class="popup__form">
             <button type="button" class="popup__button-close"></button>
             <p class="popup__form-title">Заполните форму</p>
             <fieldset class="popup__input-container">
-                <input class="popup__input" placeholder="login">
-                <input class="popup__input" placeholder="password">
+                <input class="popup__input" id="firstInput" placeholder="login">
+                <input class="popup__input" id="secondInput" placeholder="password">
             </fieldset>
             <button type="submit" class="popup__button-submit">Отправить</button>
         </form>
     </div>
 </body>
+
+<script>
+    const popupOpenBtn = document.querySelector('.openpop');
+    const popup = document.querySelector('.popup');
+    const popupForm = document.querySelector('.popup__form');
+    const popupCloseBtn = document.querySelector('.popup__button-close');
+    const popupTitle = document.querySelector('.popup__form-title');
+    const popupFieldset = document.querySelector('.popup__input-container');
+    const popupFirstIn = document.querySelector('#fifstInput');
+    const popupScndIn = document.querySelector('#secondInput');
+    const popupSbmtBtn = document.querySelector('.popup__button-submit');
+
+
+
+
+    popupOpenBtn.addEventListener('click', () => handleOpenAndClosePopup(popup, popupCloseBtn, popupSbmtBtn));
+    popupCloseBtn.addEventListener('click', () => handleOpenAndClosePopup(popup, popupCloseBtn, popupSbmtBtn));
+    popupSbmtBtn.addEventListener('click', (Event) => { Prev(Event); handleOpenAndClosePopup(popup, popupCloseBtn, popupSbmtBtn) })
+
+    function handleOpenAndClosePopup(op, cl, st) {
+        op.classList.toggle('popup_opened');
+        cl.classList.toggle('popup__button-close_push');
+        st.classList.toggle('popup__button-submit_push');
+    }
+
+
+
+
+    function Prev(Event) {
+        Event.preventDefault();
+    }
+
+
+
+
+</script>
+
 </html>

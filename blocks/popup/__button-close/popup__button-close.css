@@ -1,4 +1,5 @@
 .popup__button-close{
+    transform: translate(0px, 3px);
     background-image: url(../../../image/CloseIcon.svg);
     width: 58px;
     height: 58px;
@@ -8,4 +9,5 @@
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
+    cursor: pointer;
 }
