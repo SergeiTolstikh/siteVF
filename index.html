@@ -9,11 +9,27 @@
     <title>Document</title>
 </head>
 
-<body>
-    <header>
-
+<body class="body">
+    <header class="header">
+        <h1 class="header__title">Menu</h1>
+        <div class="header__menu-container">
+            
+                <p class="header__menu-button">Menu</p>
+                <p class="header__menu-button-x">X</p>
+                <div class="header__menu-items">
+                    <p class="header__menu-item">Взять</p>
+                    <p class="header__menu-item">Положить</p>
+                    <p class="header__menu-item">Сходить</p>
+                    <p class="header__menu-item">Прыгнуть</p>
+                    <p class="header__menu-item">Съесть</p>
+                    <p class="header__menu-item">Выпить</p>
+                </div>
+            
+        </div>
+        <p class="header__openpopup">Авторизация</p>
     </header>
-    <main>
+
+    <main class="main">
         <section>
 
         </section>
@@ -21,8 +37,7 @@
     <footer>
 
     </footer>
-    <button type="button" class="openpop"></button>
-    <div class="popup">
+    <div class="popup" id="authPopup">
 
         <form class="popup__form">
             <button type="button" class="popup__button-close"></button>
@@ -34,11 +49,13 @@
             <button type="submit" class="popup__button-submit">Отправить</button>
         </form>
     </div>
+
+
 </body>
 
 <script>
-    const popupOpenBtn = document.querySelector('.openpop');
-    const popup = document.querySelector('.popup');
+    const popupOpenBtn = document.querySelector('.header__openpopup');
+    const popup = document.querySelector('#authPopup');
     const popupForm = document.querySelector('.popup__form');
     const popupCloseBtn = document.querySelector('.popup__button-close');
     const popupTitle = document.querySelector('.popup__form-title');
@@ -47,27 +64,117 @@
     const popupScndIn = document.querySelector('#secondInput');
     const popupSbmtBtn = document.querySelector('.popup__button-submit');
 
+    const header = document.querySelector('.header');
+    const headerTitle = document.querySelector('.header__title');
+    const headerMenuContainer = document.querySelector('.header__menu-container')
+    const headerMenu = document.querySelector('.header__menu');
+    const headerMenuBtn = document.querySelector('.header__menu-button');
+    const headerMenuBtnX = document.querySelector('.header__menu-button-x');
+    const headerMenuItems = document.querySelector('.header__menu-items');
+    const headerMenuItemsOn = document.querySelector('.header__menu-items_on');
+
+    const headerItem = document.querySelector('.header__menu-item');
 
 
 
-    popupOpenBtn.addEventListener('click', () => handleOpenAndClosePopup(popup, popupCloseBtn, popupSbmtBtn));
-    popupCloseBtn.addEventListener('click', () => handleOpenAndClosePopup(popup, popupCloseBtn, popupSbmtBtn));
-    popupSbmtBtn.addEventListener('click', (Event) => { Prev(Event); handleOpenAndClosePopup(popup, popupCloseBtn, popupSbmtBtn) })
 
-    function handleOpenAndClosePopup(op, cl, st) {
-        op.classList.toggle('popup_opened');
-        cl.classList.toggle('popup__button-close_push');
-        st.classList.toggle('popup__button-submit_push');
+
+
+
+    function handleOpenPopup(o) {
+        o.classList.add('popup_opened');
+        handleMenuClose(headerMenuItems, headerMenuContainer);
+        menuButtonVariantClose(headerMenuBtn, headerMenuBtnX);
     }
 
-
-
+    function handleClosePopup(o) {
+        o.classList.remove('popup_opened');
+    }
 
     function Prev(Event) {
         Event.preventDefault();
+        handleClosePopup(popup);
+    }
+
+    function EscClosePopup(Event) {
+        if (Event.key === 'Escape') {
+            handleClosePopup(popup);
+            handleMenuClose(headerMenuItems, headerMenuContainer);
+            menuButtonVariantClose(headerMenuBtn, headerMenuBtnX);
+        }
+
+    }
+
+    function clicEscapePopup(Event) {
+        const ArrayPop = Array.from(document.querySelectorAll('.popup'));
+        ArrayPop.forEach(function (el) {
+            el.addEventListener('click', (Event)=>{
+                if (Event.target.classList.contains('popup')) {
+                handleClosePopup(popup);
+            }
+            })
+        })
+        const ArrayMenu = Array.from(document.querySelectorAll('.header__menu-container'));
+        ArrayMenu.forEach(function(el){
+            el.addEventListener('click', (Event)=>{
+                if(Event.target.classList.contains('header__menu-container')) {
+                    handleMenuClose(headerMenuItems, headerMenuContainer);
+                    menuButtonVariantClose(headerMenuBtn, headerMenuBtnX);
+                }
+            })
+        })
+
     }
 
 
+
+
+
+    function handleMenuOpen(el, l) {
+        el.classList.add('header__menu-items_on');
+        l.classList.add('header__menu-container_on')
+
+    }
+
+    function handleMenuClose(el, l) {
+        el.classList.remove('header__menu-items_on');
+        l.classList.remove('header__menu-container_on')
+    }
+
+
+    function menuButtonVariantOpen(el, btnx) {
+        el.classList.add('header__menu-button_display-off');
+        btnx.classList.add('header__menu-button-x_on');
+    }
+
+    function menuButtonVariantClose(el, btnx) {
+        el.classList.remove('header__menu-button_display-off');
+        btnx.classList.remove('header__menu-button-x_on');
+    }
+
+    function resizeWindow() {
+        if (window.innerWidth >= 768) {
+            menuButtonVariantClose(headerMenuBtn, headerMenuBtnX);
+            handleMenuClose(headerMenuItems, headerMenuContainer);
+        }
+    }
+
+
+    function Target(qq) {
+        console.log(qq.target)
+    }
+    document.addEventListener('click', (Event) => Target(Event));
+
+
+    popupOpenBtn.addEventListener('click', () => handleOpenPopup(popup));
+    popupCloseBtn.addEventListener('click', () => handleClosePopup(popup));
+    popupSbmtBtn.addEventListener('click', (Event) => Prev(Event));
+    document.addEventListener('keydown', (Event) => EscClosePopup(Event));
+    document.addEventListener('click', (Event) => { clicEscapePopup(Event) });
+
+    headerMenuBtn.addEventListener('click', () => { handleMenuOpen(headerMenuItems, headerMenuContainer); menuButtonVariantOpen(headerMenuBtn, headerMenuBtnX) });
+    headerMenuBtnX.addEventListener('click', () => { menuButtonVariantClose(headerMenuBtn, headerMenuBtnX); handleMenuClose(headerMenuItems, headerMenuContainer) });
+    window.addEventListener('resize', () => resizeWindow());
 
 
 </script>

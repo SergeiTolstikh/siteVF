@@ -1,0 +1,19 @@
+.header__openpopup{
+    background-color: #3c3c3c;
+    border: none;
+    color: white;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    padding: 12px 5px;
+    margin: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+
+.header__openpopup:hover {
+    background-color: #5c4242;
+}

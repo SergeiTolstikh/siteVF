@@ -1,0 +1,7 @@
+.header__menu-container_on {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    z-index: 1;
+}

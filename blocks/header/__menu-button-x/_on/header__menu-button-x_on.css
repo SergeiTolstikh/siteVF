@@ -1,0 +1,16 @@
+.header__menu-button-x_on {
+    display: flex;
+    background-color: #3c3c3c;
+    border: none;
+    color: white;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    padding: 12px 5px;
+    margin: 0;
+    cursor: pointer;
+    right: 15px;
+    padding-left: 18px;
+}

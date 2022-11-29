@@ -3,7 +3,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
-    max-width: 220px;
+    max-width: 150px;
     border-width: 0px;
     font-family: 'Inter', 'Arial', 'sans-serif';
     font-size: 18px;
@@ -22,4 +22,5 @@
     background-color: #5c4242;
     transition: .3s;
 }
+
 

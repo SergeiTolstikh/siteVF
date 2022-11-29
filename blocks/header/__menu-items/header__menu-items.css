@@ -1,0 +1,16 @@
+.header__menu-items {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    }
+
+
+@media screen and (max-width: 769px) {
+    .header__menu-items {
+        position: fixed;
+        flex-direction: column;
+        visibility: hidden;
+        background-color: rgba(24, 10, 10, 0.224);
+        transform: translate(0%,-117%);      
+    }
+}

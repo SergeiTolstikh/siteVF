@@ -1,0 +1,8 @@
+.header__menu-items_on {
+    width: 100%;
+    max-width: 350px;
+    visibility: visible;
+    transform: translate(0%,0%);
+    transition: 0.3s;
+    z-index: -1;
+}
