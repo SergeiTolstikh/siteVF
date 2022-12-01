@@ -23,4 +23,9 @@
     transition: .3s;
 }
 
+.popup__button-submit:active {
+    transition: .1s;
+    background-color: #c58484;
+    padding-bottom: 6px;
+}
 

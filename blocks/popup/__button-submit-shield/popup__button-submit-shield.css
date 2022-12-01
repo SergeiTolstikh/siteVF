@@ -1,0 +1,15 @@
+.popup__button-submit-shield {
+    transition: 0.15s;
+    opacity: 1;
+    display: flex;
+    position: inherit;
+    width: 64%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    grid-row: 3/4;
+    grid-column: 2/3;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    z-index: -1;
+}

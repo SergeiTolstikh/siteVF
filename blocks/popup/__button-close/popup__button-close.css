@@ -10,4 +10,9 @@
     grid-row-start: 1;
     grid-row-end: 2;
     cursor: pointer;
+    margin: 2px;
+}
+
+.popup__button-close:active {
+    margin-top: 0px;
 }
