@@ -16,3 +16,16 @@
     cursor: pointer;
     color: #ffffff;
 }
+
+.header__menu-item:active {
+    background-color: #c58484;
+    padding-top: 10.1px;
+}
+
+@media screen and (max-width: 769px) {
+    .header__menu-item:active {
+    background-color: #c58484;
+    padding-left: 8px;
+    padding-top: 12px;
+    }
+}

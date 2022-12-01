@@ -1,0 +1,5 @@
+.popup__input-error_visible {
+    visibility: visible;
+    color: #e96161;
+    align-self: flex-start;
+}

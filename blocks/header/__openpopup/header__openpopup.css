@@ -12,8 +12,16 @@
     cursor: pointer;
     position: absolute;
     right: 15px;
+    z-index: 1;
 }
 
 .header__openpopup:hover {
     background-color: #5c4242;
+}
+
+.header__openpopup:active{
+    transition: .1s;
+    background-color: #c58484;
+    padding-top: 10.1px;
+    padding-bottom: 14px;
 }

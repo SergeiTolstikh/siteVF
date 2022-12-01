@@ -1,0 +1,19 @@
+.popup__form-title_onanimation {
+    animation-duration: 1.5s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes slidein {
+    from {
+      color: #5c4242
+      
+    }
+  
+    to {
+      color: #ffffff;
+    }
+
+    
+  }
+  

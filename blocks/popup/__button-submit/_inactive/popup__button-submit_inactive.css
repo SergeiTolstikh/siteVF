@@ -1,0 +1,13 @@
+.popup__button-submit_inactive{
+    color: #242424;
+}
+
+.popup__button-submit_inactive:hover {
+    color: #242424;
+    background-color: #727272; 
+}
+
+.popup__button-submit_inactive:active {
+    background-color: #727272;
+    padding-bottom: 1px;
+}
