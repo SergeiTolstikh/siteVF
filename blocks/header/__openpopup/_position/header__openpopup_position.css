@@ -1,0 +1,7 @@
+.header__openpopup_position {
+    transform: translate(15px, 0px);
+    transition: 500ms;
+    color: rgb(255 255 255);
+    background-color: #6e2d2d;
+    border-top-left-radius: 15px;
+}

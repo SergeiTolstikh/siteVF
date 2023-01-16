@@ -1,0 +1,8 @@
+.gallery-tmplt__button-like {
+    background-image: url(../../../image/Like-off.svg);
+    background-color: inherit;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 25px;
+    border: none;
+}

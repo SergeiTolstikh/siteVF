@@ -1,0 +1,6 @@
+.gallery-tmplt__block-count {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 10px;
+}

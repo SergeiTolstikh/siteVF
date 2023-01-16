@@ -1,0 +1,8 @@
+.gallery-tmplt__img_overlay {
+    position: fixed;
+    top: 55px;
+    left: 0px;
+    width: 60vw;
+    height: 40vw;
+    margin-left: 20vw;
+}

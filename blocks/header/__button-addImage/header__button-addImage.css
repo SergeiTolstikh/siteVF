@@ -1,0 +1,36 @@
+.header__button-addImage {
+    background-image: url(../../../image/plus_white.svg);
+    background-color: unset;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    border: none;
+    top: 0px;
+    transition: 0.5s;
+    right: 170px;
+    width: 45px;
+    height: 45px;
+    margin-right: -18px;
+    padding: 0px;
+    z-index: 1;
+}
+
+.header__button-addImage:hover {
+    transition: 0.1s;
+    background-image: url(../../../image/plus_hover.svg);
+    cursor: pointer;
+    border-radius: 22px;
+}
+
+.header__button-addImage:active {
+    background-image: url(../../../image/plus_active.svg);
+    rotate: 45deg;
+    }
+
+
+@media screen and (max-width: 769px) {
+    .header__button-addImage {
+    transition: 0.5s;
+    right: 50vw;
+    }
+}

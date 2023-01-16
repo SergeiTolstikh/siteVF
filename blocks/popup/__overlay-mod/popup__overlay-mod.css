@@ -1,0 +1,5 @@
+.popup__overlay-mod {
+    display: grid;
+    grid-template-columns: 58px auto 58px;
+    grid-template-rows: 58px 80vh 25px;
+}

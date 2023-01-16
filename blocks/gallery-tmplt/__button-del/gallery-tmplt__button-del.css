@@ -1,0 +1,20 @@
+.gallery-tmplt__button-del {
+    background-image: url(../../../image/trash_white.svg);
+    background-color: initial;
+    background-position: center;
+    border: none;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    z-index: 1;
+}
+
+.gallery-tmplt__button-del:hover {
+    background-image: url(../../../image/trash_hover.svg);
+}
+
+.gallery-tmplt__button-del:active {
+    background-image: url(../../../image/trash_active.svg);
+}
