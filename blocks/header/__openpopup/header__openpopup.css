@@ -1,5 +1,4 @@
 .header__openpopup{
-    background-color: #3c3c3c;
     border: none;
     color: white;
     font-family: 'Inter', 'Arial', 'sans-serif';
@@ -13,6 +12,11 @@
     position: absolute;
     right: 15px;
     z-index: 1;
+    max-width: 136px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .header__openpopup:hover {

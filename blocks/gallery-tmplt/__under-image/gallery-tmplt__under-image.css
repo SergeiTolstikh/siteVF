@@ -1,0 +1,7 @@
+.gallery-tmplt__under-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    height: 81px;
+}

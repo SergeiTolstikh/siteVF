@@ -1,0 +1,12 @@
+.gallery-tmplt__block {
+    display: flex;
+    grid-column-start: auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #6f6f6f;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+}

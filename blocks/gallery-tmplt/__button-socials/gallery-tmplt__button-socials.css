@@ -1,0 +1,7 @@
+.gallery-tmplt__button-socials {
+    margin-right: 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

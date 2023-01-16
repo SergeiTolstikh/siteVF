@@ -7,6 +7,9 @@
     line-height: 21px;
     padding: 12px 5px;
     margin: 0;
+    max-width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
 }
 
@@ -15,6 +18,26 @@
     background-color: #5c4242;;
     cursor: pointer;
     color: #ffffff;
+    max-width: 150px;
+}
+
+.header__menu-item:active {
+    background-color: #c58484;
+    padding-top: 10.1px;
+}
+
+@media screen and (max-width: 769px) {
+    .header__menu-item {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    .header__menu-item:active {
+    background-color: #c58484;
+    padding-left: 8px;
+    padding-top: 12px;
+    
+    }
 }
 
 .header__menu-item:active {

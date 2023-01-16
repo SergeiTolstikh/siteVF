@@ -1,0 +1,25 @@
+.gallery-tmplt__container{
+    margin-top: 55px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 320px 320px 320px;
+    grid-auto-rows: 350px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .gallery-tmplt__container {
+        grid-template-columns: 47.4vw 47.4vw;
+        grid-auto-rows: 51.84vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gallery-tmplt__container {
+        grid-template-columns: 96.287vw;
+        grid-auto-rows: 105.31vw;
+    }
+}

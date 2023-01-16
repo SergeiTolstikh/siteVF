@@ -1,0 +1,7 @@
+.popup__form-title_overlay {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-row: 3;
+    grid-column: 2;
+}
