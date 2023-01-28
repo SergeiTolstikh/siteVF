@@ -155,7 +155,7 @@ const toggleButtonState = (a, e) => {
 }
 
 const hasInvalidInput = (a) => {
-    return a.some(el => !el.validity.valid);
+    return a.some(el => { console.log(!el.validity.valid), (!el.validity.valid) });
 }
 
 //console.log(hasInvalidInput() === true);

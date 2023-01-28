@@ -5,7 +5,7 @@ export default class Popup extends Pop {
         super(selector);
         this._selector = this.selector;
         this._event = event;
-        this._selectorPopup = 'header'; //Выбор селектора на котором срабатывать
+        this._selectorPopup = 'header__title'; //Выбор селектора на котором срабатывать
 
     }
 
@@ -71,7 +71,7 @@ export default class Popup extends Pop {
 
     renderPopupOverlay() {
         (this._event.target.className === `${this._selectorPopup}`
-            ? (this._creator(), console.log(this._event))
+            ? (this._creator())
             : '');
     }
 }

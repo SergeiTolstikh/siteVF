@@ -5,8 +5,10 @@ export default class PopupAdd extends Pop {
         super(selector);
         this._selector = this.selector;
         this._event = event;
-        this._selectorPopupAuth = 'header__openpopup';
-        this._selectorPopupImg = 'header__title';
+        this._selectorPopupAuth = document.querySelector('.header__openpopup');
+        this._selectorPopupImg = '';
+        this._header = document.querySelector('.header');
+        //console.log(this._selectorPopupImg)
     }
 
     _creatorElements() {
@@ -18,6 +20,7 @@ export default class PopupAdd extends Pop {
         this._elementFieldset = document.createElement('fieldset');
         this._elementSubmit = document.createElement('button');
 
+
     }
 
     _creatorClassForElements() {
@@ -25,6 +28,7 @@ export default class PopupAdd extends Pop {
         this._elementForm.classList.add('popup__form');
         this._elementFieldset.classList.add('popup__input-container');
         this._elementSubmit.classList.add('popup__button-submit');
+        this._elementSubmit.textContent = "Сохранить";
     }
 
     _adderElements() {
@@ -57,10 +61,8 @@ export default class PopupAdd extends Pop {
         this._ArrayTextMistakes = Array.from(this._selector.querySelectorAll('.popup__input-error'));
     }
 
-
-
     _createAttributeIdforInput() {
-        (this._selectorPopupAuth === this._event.target.className
+        (this._selectorPopupAuth.className === this._event.target.className
             ? (this._selector.id = "auth__input")
             : this._selector.id = "img__input");
         this._ArrayInputs.forEach((e) => { e.id = `${this._selector.id}` });
@@ -86,12 +88,13 @@ export default class PopupAdd extends Pop {
         this._ArrayInputs.forEach((e, i) => {
             e.setAttribute('id', `${this._selector.id}` + `${'-'}` + `${i + 1}`);
             this._plaseholdersInput(e);
+            e.setAttribute('required', 'required');
             ((e.type === 'text') ? (this._addMinlenght(e, 2), this._addMaxlength(e, 30)) : '');
             ((e.type === 'email') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 40)) : '');
             ((e.type === 'url') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 350)) : '');
         })
         this._ArrayTextMistakes.forEach((e, i) => {
-            e.classList.add(`${this._elementInput.className}` + `${'-'}` + `${i + 1}` + `${'-error'}`);
+            e.setAttribute('id', `${this._selector.id}` + `${'-'}` + `${i + 1}` + `${'-error'}`);
         })
     }
 
@@ -104,6 +107,7 @@ export default class PopupAdd extends Pop {
 
     _addMaxlength(e, length) {
         e.setAttribute('maxlength', `${length}`);
+
     }
 
     _addMinlenght(e, length) {
@@ -121,20 +125,57 @@ export default class PopupAdd extends Pop {
         this._setAttributes();
     }
 
-    closePopup(){
+    closePopup() {
         super.closePopup();
         this._elementForm.remove();
-        this._selector.removeAttribute('id')
-        
+        this._selector.removeAttribute('id');
     }
+
 
     _listenerForm() {
         super.listeners();
+        this._elementSubmit.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            this._choiceAuthTextContent(this._ArrayInputs);
+            console.log(this._ArrayInputs);
+        });
+
     }
 
-    renderPopupForm() {
-        (this._event.target.className === `${this._selectorPopupAuth}` || (this._event.target.className === `${this._selectorPopupImg}`)
-            ? (this._creatorFormPopup(), console.log(this._event))
+    _choiceAuthTextContent = (el) => {
+        el.forEach((e) => {
+            if (e.id === 'auth__input-1') {
+                this._authTextContent(e.value);
+                console.log(e.value)
+            }
+        })
+    }
+
+    _authTextContent(e) {
+        this._selectorPopupAuth.textContent = e;
+        this._selectorPopupAuth.setAttribute('id', 'authorized');
+        this._addButtonOnPanel(this._header);
+        this.closePopup();
+    }
+
+    _addButtonOnPanel = (e) => {
+        e.insertAdjacentHTML('beforeend', '<button class="header__button-addImage"></button>');
+        this._buttonOnPanel = document.querySelector('.header__button-addImage');
+        this._selectorPopupImg = this._buttonOnPanel.className;
+        console.log(this._selectorPopupImg);
+        this._listenerOpenPopupImg(this._selectorPopupImg);
+    }
+
+    _listenerOpenPopupImg(e) {
+        this._buttonOnPanel.addEventListener('click', (event) => {
+            this._event = event, this.renderPopupForm(e)
+        })
+    }
+
+    renderPopupForm(e) {
+        ((this._event.target.className === `${this._selectorPopupAuth.className}`) || (this._event.target.className === `${e}`)
+            ? (this._creatorFormPopup())
             : '');
+
     }
 }

@@ -1,8 +1,6 @@
 export default class Pop {
     constructor(selector) {
         this.selector = selector;
-        console.log(this.selector);
-
     }
 
     creatorElements() {
@@ -17,15 +15,24 @@ export default class Pop {
 
     openPopup() {
         this.selector.classList.add('popup_opened');
+        document.addEventListener('keydown', this._handleEscClose)
     }
 
     closePopup() {
         this.selector.classList.remove('popup_opened');
+        document.removeEventListener('keydown', this._handleEscClose)
+    }
+
+    _handleEscClose = (evt) => {
+        (evt.key === 'Escape' ? this.closePopup() : ' ')
     }
 
     listeners() {
         this.selector.querySelector('.popup__button-close').addEventListener('click', () => {
             this.closePopup();
+        });
+        this.selector.addEventListener('click', (evt) => {
+            (evt.target.classList.contains('popup')) ? this.closePopup() : " "
         })
     }
 
