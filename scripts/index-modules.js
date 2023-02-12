@@ -5,7 +5,7 @@ import Validator from "../components/Validation.js";
 const popup = document.querySelector('.popup');
 
 document.addEventListener('click', (Event) => {
-    Run(Event, popup); Run2(Event, popup); Run3(Event, popup)
+    Run(Event, popup); Run2(Event, popup, { cardAdd: () => Ca() }); Run3(Event, popup)
 })
 
 function Run(e, c) {
@@ -13,8 +13,8 @@ function Run(e, c) {
     PopupS.renderPopupOverlay();
 }
 
-function Run2(e, c) {
-    const PopupS = new PopupAdd(e, c)
+function Run2(e, c, d) {
+    const PopupS = new PopupAdd(e, c, d)
     PopupS.renderPopupForm();
 
 }
@@ -22,6 +22,10 @@ function Run2(e, c) {
 function Run3(e, c) {
     const Validation = new Validator(e, c);
     Validation.ValidatorOn();
+}
+
+function Ca() {
+    console.log('PUSH')
 }
 
 

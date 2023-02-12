@@ -35,6 +35,4 @@ export default class Pop {
             (evt.target.classList.contains('popup')) ? this.closePopup() : " "
         })
     }
-
-
 }

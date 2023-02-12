@@ -3,19 +3,20 @@ export default class Validator {
         this._event = event;
         this._selector = selector;
         this._popupAuth = '.header__openpopup';
-        this._popupImg = '.header__button-addimage';
+        this._popupImg = '.header__button-addImage';
         this._I = '';
         this._popupSbmtBtnShield = this._selector.querySelector('.popup__button-submit-shield');
-
     }
 
     ValidatorOn() {
+        console.log(this._event.target.className);
         ((`.${this._event.target.className}` === this._popupAuth || `.${this._event.target.className}` === this._popupImg)
-            ? this._ValidationAreas()
+            ? (this._ValidationAreas(),  console.log('444'))
             : " ");
     }
 
     _ValidationAreas() {
+        console.log('555')
         this._ArrayInputAreas = Array.from(this._selector.querySelectorAll('.popup__input'));
         this._sbmtBtn = this._selector.querySelector('.popup__button-submit');
         this._shieldClickListen();
@@ -87,10 +88,5 @@ export default class Validator {
     _shieldClickListenOff() {
         this._selector.querySelector('.popup__form-title').classList.remove('popup__form-title_onanimation');
     }
-
-
-
-
-
 }
 

@@ -1,10 +1,11 @@
 import Pop from "./Pop.js";
 
 export default class PopupAdd extends Pop {
-    constructor(event, selector) {
+    constructor(event, selector, { cardAdd }) {
         super(selector);
         this._selector = this.selector;
         this._event = event;
+        this._cardAdd = cardAdd;
         this._selectorPopupAuth = document.querySelector('.header__openpopup');
         this._selectorPopupImg = '';
         this._header = document.querySelector('.header');
@@ -19,8 +20,6 @@ export default class PopupAdd extends Pop {
         this._elementForm = document.createElement('form');
         this._elementFieldset = document.createElement('fieldset');
         this._elementSubmit = document.createElement('button');
-
-
     }
 
     _creatorClassForElements() {
@@ -136,11 +135,13 @@ export default class PopupAdd extends Pop {
         super.listeners();
         this._elementSubmit.addEventListener('click', (evt) => {
             evt.preventDefault();
-            this._choiceAuthTextContent(this._ArrayInputs);
+            //console.log(this._selector.id)
+            (evt.target.id === 'submit_auth' ? this._choiceAuthTextContent(this._ArrayInputs) : this._cardAdd());
             console.log(this._ArrayInputs);
         });
-
     }
+
+
 
     _choiceAuthTextContent = (el) => {
         el.forEach((e) => {
@@ -168,7 +169,10 @@ export default class PopupAdd extends Pop {
 
     _listenerOpenPopupImg(e) {
         this._buttonOnPanel.addEventListener('click', (event) => {
-            this._event = event, this.renderPopupForm(e)
+            console.log(this._event.target)
+            this._event = event,
+                this.renderPopupForm(e);
+
         })
     }
 
