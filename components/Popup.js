@@ -5,8 +5,8 @@ export default class Popup extends Pop {
         super(selector);
         this._selector = this.selector;
         this._event = event;
-        this._selectorPopup = 'header__title'; //Выбор селектора на котором срабатывать
-
+        this._selectorPopup = 'gallery-tmplt__img'; //Выбор селектора на котором срабатывать
+console.log(this.selector)
     }
 
     _creatorElements() {

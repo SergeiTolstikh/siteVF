@@ -1,0 +1,15 @@
+.gallery-tmplt__count_like {
+    margin: 0px 0px 0px 10px;
+    color: white;
+    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    width: 100%;
+    max-width: 275px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 6px;
+}
