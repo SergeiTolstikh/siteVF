@@ -88,9 +88,10 @@ export default class PopupAdd extends Pop {
             e.setAttribute('id', `${this._selector.id}` + `${'-'}` + `${i + 1}`);
             this._plaseholdersInput(e);
             e.setAttribute('required', 'required');
-            ((e.type === 'text') ? (this._addMinlenght(e, 2), this._addMaxlength(e, 30)) : '');
-            ((e.type === 'email') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 40)) : '');
-            ((e.type === 'url') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 350)) : '');
+            ((e.name === 'name') ? (this._addMinlenght(e, 2), this._addMaxlength(e, 10)) : '');
+            ((e.name === 'email') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 40)) : '');
+            ((e.name === 'imgname') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 20)) : '');
+            ((e.name === 'url') ? (this._addMinlenght(e, 3), this._addMaxlength(e, 500)) : '');
         })
         this._ArrayTextMistakes.forEach((e, i) => {
             e.setAttribute('id', `${this._selector.id}` + `${'-'}` + `${i + 1}` + `${'-error'}`);
@@ -136,8 +137,9 @@ export default class PopupAdd extends Pop {
         this._elementSubmit.addEventListener('click', (evt) => {
             evt.preventDefault();
             //console.log(this._selector.id)
-            (evt.target.id === 'submit_auth' ? this._choiceAuthTextContent(this._ArrayInputs) : this._cardAdd());
+            (evt.target.id === 'submit_auth' ? this._choiceAuthTextContent(this._ArrayInputs) : this._cardAdd(), this.closePopup());
             console.log(this._ArrayInputs);
+            ;
         });
     }
 
