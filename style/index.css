@@ -65,7 +65,9 @@
 @import url(../blocks/gallery-tmplt/__button-socials/gallery-tmplt__button-socials.css);
 @import url(../blocks/gallery-tmplt/__block-count/gallery-tmplt__block-count.css);
 @import url(../blocks/gallery-tmplt/__button-like/gallery-tmplt__button-like.css);
+@import url(../blocks/gallery-tmplt/__button-like/_on/gallery-tmplt__button-like_on.css);
 @import url(../blocks/gallery-tmplt/__button-dislike/gallery-tmplt__button-dislike.css);
+@import url(../blocks/gallery-tmplt/__button-dislike/_on/gallery-tmplt__button-dislike_on.css);
 @import url(../blocks/gallery-tmplt/__count/_like/gallery-tmplt__count_like.css);
 @import url(../blocks/gallery-tmplt/__count/_dislike/gallery-tmplt__count_dislike.css);
 @import url(../blocks/gallery-tmplt/__img/gallery-tmplt__img.css);

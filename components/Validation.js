@@ -1,7 +1,7 @@
 export default class Validator {
-    constructor(event, selector) {
+    constructor(event) {
         this._event = event;
-        this._selector = selector;
+        this._selector = document.querySelector('.popup');
         this._popupAuth = '.header__openpopup';
         this._popupImg = '.header__button-addImage';
         this._I = '';

@@ -1,12 +1,12 @@
 import Pop from "./Pop.js";
 
 export default class Popup extends Pop {
-    constructor(event, selector) {
-        super(selector);
+    constructor(event) {
+        super();
         this._selector = this.selector;
         this._event = event;
         this._selectorPopup = 'gallery-tmplt__img'; //Выбор селектора на котором срабатывать
-console.log(this.selector)
+        console.log(this.selector)
     }
 
     _creatorElements() {
@@ -48,12 +48,14 @@ console.log(this.selector)
     }
 
     closePopup() {
-        this._selector.removeAttribute('id');
-        super.closePopup();
+       
+
         this._selector.querySelector('.popup__form-title').remove();
         this._selector.querySelector('.popup__button-close').remove();
         this._selector.querySelector('.popup__img').remove();
         this._selector.classList.remove('popup__overlay-mod');
+        this._selector.removeAttribute('id');
+        super.closePopup();
     }
 
     listeners() {

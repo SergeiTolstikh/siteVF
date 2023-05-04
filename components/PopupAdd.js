@@ -1,8 +1,8 @@
 import Pop from "./Pop.js";
 
 export default class PopupAdd extends Pop {
-    constructor(event, selector, { cardAdd }) {
-        super(selector);
+    constructor(event, { cardAdd }) {
+        super();
         this._selector = this.selector;
         this._event = event;
         this._cardAdd = cardAdd;

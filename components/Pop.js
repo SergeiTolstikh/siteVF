@@ -1,6 +1,6 @@
 export default class Pop {
-    constructor(selector) {
-        this.selector = selector;
+    constructor() {
+        this.selector = document.querySelector('.popup');
     }
 
     creatorElements() {

@@ -28,64 +28,28 @@ export default class Card {
         this._templateCountDisLike = this._newCard.querySelector(".gallery-tmplt__count_dislike");
 
         this._listener();
-        //this._likers();
-        this._delCard();
-        //console.dir(this._templateBtnLike)
         return this._newCard;
     }
 
     _listener = () => {
-
-        let count = 0
-        document.addEventListener('click', (event) => {
-            (event.target.className === "gallery-tmplt__button-like") ? this._counterPush(count) : ""
+        this._templateBtnLike.addEventListener('click', () => {
+            this._templateBtnLike.classList.toggle("gallery-tmplt__button-like_on");
+            (this._templateBtnDisLike.classList.contains("gallery-tmplt__button-dislike_on") ?
+                this._templateBtnDisLike.classList.remove("gallery-tmplt__button-dislike_on") : "")
         })
 
-
-        /*let like = 0;
-        let dislike = 0;
-
-        document.addEventListener('click', (event) => {
-            for (like = 0; like <= 0; like++);
-            (event.target.className === "gallery-tmplt__button-like") ?
-                console.log(event.target.querySelector(".gallery-tmplt__count_like").textContent = like + dislike)
-                : '';
-
-            (event.target.className === "gallery-tmplt__button-dislike") ?
-                event.target.querySelector(".gallery-tmplt__count_dislike").textContent = like + dislike
-                : '';
-        });*/
-    }
-
-    /*_likers = () => {
-        document.addEventListener('click', (event) => {
-            (event.target.className === "gallery-tmplt__button-like") ?
-                (this.t = event.target,
-                    this._ArrayLike = Array.from(document.querySelectorAll(".gallery-tmplt__button-like")),
-                    this.index = this._ArrayLike.findIndex(e => e[0] === this.t),
-                    console.log(this.index)) : '';
-
+        this._templateBtnDisLike.addEventListener('click', () => {
+            this._templateBtnDisLike.classList.toggle("gallery-tmplt__button-dislike_on");
+            (this._templateBtnLike.classList.contains("gallery-tmplt__button-like_on") ?
+                this._templateBtnLike.classList.remove("gallery-tmplt__button-like_on") : "");
         })
-    }*/
-
-
-    _counterPush = (e) => {
-        for (; e <5; e++)
-        // e++
-        console.log(e);
-    }
-
-
-
-
-    _delCard = () => {
         document.addEventListener('click', (event) => {
             (event.target.className === "gallery-tmplt__button-del") ?
                 event.target.closest(".gallery-tmplt__block").remove() : " "
         })
+
+
     }
-
-
 
     adderCard = () => {
         this._elements();
