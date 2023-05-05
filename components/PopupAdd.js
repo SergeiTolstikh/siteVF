@@ -130,10 +130,11 @@ export default class PopupAdd extends Pop {
         this._elementForm.remove();
         this._selector.removeAttribute('id');
     }
+    
 
 
     _listenerForm() {
-        super.listeners();
+        //super.listeners();
         this._elementSubmit.addEventListener('click', (evt) => {
             evt.preventDefault();
             //console.log(this._selector.id)
