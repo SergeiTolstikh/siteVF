@@ -21,8 +21,9 @@ export default class Pop {
     this.listeners();
   }
 
-  closePopup() {
+  closePopup(e) {
     this.selector.classList.remove("popup_opened");
+    //e.target.closest(".popup__form").remove();
   }
 
   _handleEscClose = (evt) => {

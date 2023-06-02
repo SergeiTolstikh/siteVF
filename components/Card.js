@@ -67,11 +67,16 @@ export default class Card {
     });
     document.addEventListener("click", (event) => {
       event.target.className === "gallery-tmplt__button-del"
-        ? (event.target.closest(".gallery-tmplt__block").remove(),
-          this._popDel())
+        ? /*event.target.closest(".gallery-tmplt__block").remove(),*/
+          this._popDel(event.target.closest(".gallery-tmplt__block"))
         : " ";
     });
   };
+
+  uuuu(){
+    this._templateBlock.remove()
+    console.log("999")
+  }
 
   adderCard = () => {
     this._elements();
